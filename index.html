@@ -212,11 +212,8 @@
   </script>
 
   <style>
-    /* oculta la insignia flotante de netlify  */
-    #nl-badge,
-    .nl-badge {
-      display: none !important;
-    }
+    /* oculta la insignia flotante de netlify (css fallback) */
+    #nl-badge, .nl-badge, [id="nl-badge"] { display: none !important; }
 
     ::selection {
       background: #D4AF37;
@@ -1723,6 +1720,13 @@
 
   <!-- ROUTER & LOGIC ENGINE -->
   <script>
+    // elimina el badge de netlify en cuanto se inyecta dinámicamente
+    const _nlObserver = new MutationObserver(() => {
+      const badge = document.getElementById('nl-badge') || document.querySelector('.nl-badge');
+      if (badge) { badge.remove(); _nlObserver.disconnect(); }
+    });
+    _nlObserver.observe(document.body, { childList: true, subtree: true });
+
     // 1. efecto spotlight que sigue al cursor del mouse
     const spotlight = document.getElementById('ambient-spotlight');
     window.addEventListener('mousemove', (e) => {

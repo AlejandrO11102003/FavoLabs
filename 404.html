@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Página No Encontrada | FAVO LABS</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/jpeg" href="./favolabsimg.jpg">
+  <meta name="theme-color" content="#070709">
+
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Typography: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            favo: {
+              obsidian: '#070709',
+              dark: '#0B0B0F',
+              surface: '#111117',
+              card: '#161620',
+              gold: '#D4AF37',
+              goldLight: '#F7E7A9',
+              goldDark: '#8F711C',
+              zincMuted: '#94949E'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          backgroundImage: {
+            'gold-grad': 'linear-gradient(135deg, #FFF6BD 0%, #D4AF37 50%, #94751A 100%)',
+            'gold-grad-hover': 'linear-gradient(135deg, #FFFFFF 0%, #E3C15E 50%, #B08D26 100%)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection {
+      background: #D4AF37;
+      color: #070709;
+    }
+
+    .gold-text-glow {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F6E29B 40%, #D4AF37 75%, #9E7D21 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ambient-dot-grid {
+      background-size: 48px 48px;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+
+<body class="bg-favo-obsidian text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between relative selection:bg-favo-gold selection:text-black overflow-x-hidden">
+
+  <!-- Ambient Light Orbs -->
+  <div class="fixed inset-0 pointer-events-none ambient-dot-grid opacity-50 z-0"></div>
+  <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-favo-gold/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+  <!-- Minimal Header -->
+  <header class="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between border-b border-white/[0.06]">
+    <a href="./index.html" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 rounded-xl overflow-hidden border border-favo-gold/50 bg-black shadow-[0_0_15px_rgba(212,175,55,0.25)] flex items-center justify-center transition-transform group-hover:scale-105">
+        <img src="./favolabsimg.jpg" alt="FAVO LABS Logo" class="w-full h-full object-cover">
+      </div>
+      <div class="flex items-center gap-1 font-display font-bold text-base tracking-wider">
+        <span class="text-white">FAVO</span><span class="gold-text-glow font-extrabold">LABS</span>
+      </div>
+    </a>
+
+    <a href="https://wa.me/+51981142779" target="_blank" rel="noopener noreferrer"
+      class="text-xs font-mono text-zinc-400 hover:text-favo-gold transition-colors flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>Atención Directa WhatsApp</span>
+    </a>
+  </header>
+
+  <!-- Main Error Content -->
+  <main class="relative z-10 max-w-3xl mx-auto px-6 py-16 sm:py-24 text-center my-auto">
+    <!-- Code Badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-favo-gold/30 backdrop-blur-md mb-6">
+      <span class="w-2 h-2 rounded-full bg-favo-gold"></span>
+      <span class="font-mono text-[11px] uppercase tracking-widest text-favo-gold font-semibold">Error 404 — Ruta Inexistente</span>
+    </div>
+
+    <!-- Big 404 Headline -->
+    <h1 class="font-display text-7xl sm:text-9xl font-black tracking-tight leading-none mb-6 gold-text-glow">
+      404
+    </h1>
+
+    <h2 class="font-display text-2xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
+      Coordenada digital no encontrada.
+    </h2>
+
+    <p class="text-[#cfc9bb] text-sm sm:text-base max-w-lg mx-auto leading-relaxed mb-10">
+      El recurso, página o documento al que intentas acceder ha sido reubicado o no forma parte de nuestros servidores actuales.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="./index.html"
+        class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gold-grad text-black font-semibold font-mono text-xs uppercase tracking-wider hover:shadow-[0_0_30px_rgba(212,175,55,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+        <span>← Volver a la Plataforma Principal</span>
+      </a>
+
+      <a href="https://wa.me/+51981142779?text=Hola%20FAVO%20LABS%2C%20estaba%20en%20su%20web%20y%20quisiera%20hacerles%20una%20consulta."
+        target="_blank" rel="noopener noreferrer"
+        class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-favo-gold/40 text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
+        <span>Contactar Soporte Técnico</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-zinc-500">
+    <div>
+      © 2026 FAVO LABS. Todos los derechos reservados.
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="./index.html#contacto" class="hover:text-favo-gold transition-colors">Solicitar Propuesta</a>
+      <span>•</span>
+      <a href="./index.html#proyectos" class="hover:text-favo-gold transition-colors">Portafolio</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

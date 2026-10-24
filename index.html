@@ -1723,12 +1723,16 @@
 
   <!-- ROUTER & LOGIC ENGINE -->
   <script>
-    // elimina el badge de netlify en cuanto se inyecta dinámicamente
-    const _nlObserver = new MutationObserver(() => {
-      const badge = document.getElementById('nl-badge') || document.querySelector('.nl-badge');
-      if (badge) { badge.remove(); _nlObserver.disconnect(); }
-    });
-    _nlObserver.observe(document.body, { childList: true, subtree: true });
+    // elimina el badge de netlify — combinación de observer + intervalo
+    function _killNetlifyBadge() {
+      const badge = document.getElementById('nl-badge') || document.querySelector('.nl-badge') || document.querySelector('[aria-label*="Netlify"]');
+      if (badge) badge.remove();
+    }
+    const _nlObserver = new MutationObserver(_killNetlifyBadge);
+    _nlObserver.observe(document.documentElement, { childList: true, subtree: true });
+    // intervalo como red de seguridad adicional
+    const _nlInterval = setInterval(() => { _killNetlifyBadge(); }, 300);
+    setTimeout(() => clearInterval(_nlInterval), 8000);
 
     // 1. efecto spotlight que sigue al cursor del mouse
     const spotlight = document.getElementById('ambient-spotlight');

@@ -1,0 +1,7 @@
+# configuración de netlify
+[build]
+  publish = "."
+
+# deshabilita el badge "powered by netlify" en plan gratuito
+[template.environment]
+  NETLIFY_BADGE = "hide"
